@@ -49,12 +49,8 @@ class Linklist:
         while runner is not None:
             print(runner.data)
             runner = runner.next
-    
-    
-
-
+            
 #######################################
-
 li = [2, 3, 4, 5]
 obj = Linklist(li)
 obj.traverse_linklist_array()
