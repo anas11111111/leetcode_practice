@@ -21,5 +21,5 @@ def divide(dividend, divisor):
     return -q if sign == -1 else q
 
 
-res = divide(10, 3)
+res = divide(22, 3)
 print(res)
