@@ -1,6 +1,3 @@
-from pickle import NONE
-
-
 class Node:
     def __init__(self, data=0, left=None, right=None) -> None:
         self.data = data
@@ -28,7 +25,32 @@ class Node:
         print(self.data)
         if self.right:
             self.right.printTree()
-    
+
+    def preorderTraversal(self, root):
+        res = []
+        if root:
+            res.append(root.data)
+            res += self.preorderTraversal(root.left)
+            res += self.preorderTraversal(root.right)
+        return res
+
+    def postorderTraversal(self, root):
+        res = []
+        if root:
+            res = self.preorderTraversal(root.left)
+            res += self.preorderTraversal(root.right)
+            res.append(root.data)
+        return res
+
+    def inorderTraversal(self, root):
+        res = []
+        if root:
+            res = self.inorderTraversal(root.left)
+            res.append(root.data)
+            res += self.inorderTraversal(root.right)
+        return res
+
+
 obj = Node(2)
 obj.insert(5)
 obj.insert(4)
@@ -37,3 +59,6 @@ obj.insert(1)
 obj.insert(20)
 obj.insert(10)
 obj.printTree()
+print(obj.preorderTraversal(obj))
+print(obj.postorderTraversal(obj))
+print(obj.inorderTraversal(obj))
