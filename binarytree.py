@@ -60,7 +60,7 @@ class Node:
                 return str(val) + " not found "
             return self.right.findInTree(val)
         else:
-            return str(self.data) + 'is found'
+            return str(self.data) + ' is found'
 
 
 obj = Node(2)
@@ -74,5 +74,5 @@ obj.printTree()
 print(obj.preorderTraversal(obj))
 print(obj.postorderTraversal(obj))
 print(obj.inorderTraversal(obj))
-print(obj.findInTree(1))
+print(obj.findInTree(10))
 print(obj.findInTree(16))
