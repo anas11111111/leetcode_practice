@@ -50,6 +50,18 @@ class Node:
             res += self.inorderTraversal(root.right)
         return res
 
+    def findInTree(self, val):
+        if self.data > val:
+            if self.left is None:
+                return str(val) + " not found "
+            return self.left.findInTree(val)
+        elif self.data < val:
+            if self.right is None:
+                return str(val) + " not found "
+            return self.right.findInTree(val)
+        else:
+            return str(self.data) + 'is found'
+
 
 obj = Node(2)
 obj.insert(5)
@@ -62,3 +74,5 @@ obj.printTree()
 print(obj.preorderTraversal(obj))
 print(obj.postorderTraversal(obj))
 print(obj.inorderTraversal(obj))
+print(obj.findInTree(1))
+print(obj.findInTree(16))
